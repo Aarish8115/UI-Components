@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import clsx from "clsx";
 
-type ContentProps = PropsWithChildren<{
+type ParagraphProps = PropsWithChildren<{
   size: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
   font: "default" | "italic";
   weight: "light" | "regular" | "medium" | "semibold" | "bold";
@@ -10,7 +10,7 @@ type ContentProps = PropsWithChildren<{
   letterspacing: "tighter" | "tight" | "normal" | "wide" | "wider" | "widest";
 }>;
 
-export const Content = ({
+export const Paragraph = ({
   children,
   size = "md",
   weight = "regular",
@@ -18,8 +18,8 @@ export const Content = ({
   alignment = "left",
   lineheight = "normal",
   letterspacing = "normal",
-}: ContentProps) => {
-  const sizeStyles: Record<ContentProps["size"], string> = {
+}: ParagraphProps) => {
+  const sizeStyles: Record<ParagraphProps["size"], string> = {
     xs: "text-sm",
     sm: "text-base",
     md: "text-lg",
@@ -28,24 +28,24 @@ export const Content = ({
     "2xl": "text-3xl",
     "3xl": "text-4xl",
   };
-  const weightStyles: Record<ContentProps["weight"], string> = {
+  const weightStyles: Record<ParagraphProps["weight"], string> = {
     light: "svatopluk-light",
     regular: "svatopluk-regular",
     medium: "svatopluk-medium",
     semibold: "svatopluk-semibold",
     bold: "svatopluk-bold",
   };
-  const fontStyles: Record<ContentProps["font"], string> = {
+  const fontStyles: Record<ParagraphProps["font"], string> = {
     default: "",
     italic: "italic",
   };
-  const alignmentStyle: Record<ContentProps["alignment"], string> = {
+  const alignmentStyle: Record<ParagraphProps["alignment"], string> = {
     left: "text-left",
     center: "text-center",
     right: "text-right",
     justify: "text-justify",
   };
-  const lineHeightStyle: Record<ContentProps["lineheight"], string> = {
+  const lineHeightStyle: Record<ParagraphProps["lineheight"], string> = {
     none: "leading-none",
     tight: "leading-tight",
     snug: "leading-snug",
@@ -53,7 +53,7 @@ export const Content = ({
     relaxed: "leading-relaxed",
     loose: "leading-loose",
   };
-  const letterSpacingStyle: Record<ContentProps["letterspacing"], string> = {
+  const letterSpacingStyle: Record<ParagraphProps["letterspacing"], string> = {
     tighter: "tracking-tighter",
     tight: "tracking-tight",
     normal: "tracking-normal",

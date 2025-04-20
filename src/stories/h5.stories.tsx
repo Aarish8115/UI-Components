@@ -1,21 +1,21 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
-import { Content } from "../components/Content";
+import { Heading } from "../components/Heading";
 
-type StoryProps = ComponentProps<typeof Content> & {
+type StoryProps = ComponentProps<typeof Heading> & {
   HeadingText: string;
 };
 
 const meta: Meta<StoryProps> = {
-  component: Content,
+  component: Heading,
   tags: ["autodocs"],
   argTypes: {
     size: {
-      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],
+      options: ["sm", "md", "lg", "xl", "2xl", "3xl"],
       control: {
         type: "select",
       },
-      table: { type: { summary: "xs | sm | md | lg | xl | 2xl | 3xl" } },
+      table: { type: { summary: "sm | md | lg | xl | 2xl | 3xl" } },
     },
     weight: {
       options: ["light", "regular", "medium", "semibold", "bold"],
@@ -35,12 +35,28 @@ const meta: Meta<StoryProps> = {
         type: { summary: "default | italic" },
       },
     },
+    color: {
+      options: ["default", "primary", "secondary", "muted", "accent"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "default | primary | secondary | muted | accent" },
+      },
+    },
     alignment: {
       options: ["left", "center", "right", "justify"],
       control: {
         type: "select",
       },
       table: { type: { summary: "left | center | right | justify" } },
+    },
+    transform: {
+      options: ["capitalize", "uppercase", "lowercase"],
+      control: {
+        type: "select",
+      },
+      table: { type: { summary: "capitalize | uppercase | lowercase" } },
     },
     lineheight: {
       options: ["none", "tight", "snug", "normal", "relaxed", "loose"],
@@ -65,51 +81,17 @@ export default meta;
 
 type Story = StoryObj<StoryProps>;
 
-export const paragraph: Story = {
+export const h5: Story = {
   args: {
-    children: "This is a paragraph",
+    children: "This is a H5 heading",
     size: "md",
     weight: "regular",
     font: "default",
-    alignment: "left",
+    color: "default",
+    transform: "capitalize",
     lineheight: "normal",
     letterspacing: "normal",
-  },
-  render: (args) => <Content {...args} />,
-};
-export const label: Story = {
-  args: {
-    children: "This is a label.",
-    size: "lg",
-    weight: "medium",
-    font: "default",
     alignment: "left",
-    lineheight: "normal",
-    letterspacing: "normal",
   },
-  render: (args) => <Content {...args} />,
-};
-export const Caption: Story = {
-  args: {
-    children: '"This is a caption."',
-    size: "sm",
-    weight: "light",
-    font: "italic",
-    alignment: "left",
-    lineheight: "normal",
-    letterspacing: "normal",
-  },
-  render: (args) => <Content {...args} />,
-};
-export const Helper: Story = {
-  args: {
-    children: "This is a helper text.",
-    size: "sm",
-    weight: "semibold",
-    font: "default",
-    alignment: "left",
-    lineheight: "normal",
-    letterspacing: "normal",
-  },
-  render: (args) => <Content {...args} />,
+  render: (args) => <Heading {...args} />,
 };

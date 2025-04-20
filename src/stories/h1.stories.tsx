@@ -59,7 +59,7 @@ const meta: Meta<StoryProps> = {
       table: { type: { summary: "capitalize | uppercase | lowercase" } },
     },
     lineheight: {
-      options: ["none","tight", "snug", "normal", "relaxed", "loose"],
+      options: ["none", "tight", "snug", "normal", "relaxed", "loose"],
       control: {
         type: "select",
       },
@@ -80,7 +80,6 @@ const meta: Meta<StoryProps> = {
 export default meta;
 
 type Story = StoryObj<StoryProps>;
-
 export const h1: Story = {
   args: {
     children: "This is a H1 heading.",
@@ -95,5 +94,3 @@ export const h1: Story = {
   },
   render: (args) => <Heading {...args} />,
 };
-
-

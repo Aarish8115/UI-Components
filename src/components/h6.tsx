@@ -87,5 +87,5 @@ export const Heading = ({
     letterSpacingStyle[letterspacing]
   );
 
-  return <h1 className={className}>{children}</h1>;
+  return <h6 className={className}>{children}</h6>;
 };
