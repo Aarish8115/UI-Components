@@ -64,6 +64,22 @@ const meta: Meta<StoryProps> = {
       },
       table: { type: { summary: "capitalize | uppercase | lowercase" } },
     },
+    lineheight: {
+      options: ["none","tight", "snug", "normal", "relaxed", "loose"],
+      control: {
+        type: "select",
+      },
+      table: { type: { summary: "tight | snug | normal | relaxed | loose" } },
+    },
+    letterspacing: {
+      options: ["tighter", "tight", "normal", "wide", "wider", "widest"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "tighter | tight | normal | wide | wider | widest" },
+      },
+    },
   },
 };
 
@@ -73,78 +89,90 @@ type Story = StoryObj<StoryProps>;
 
 export const h1: Story = {
   args: {
-    children: "This is an H1 heading",
+    children: "This is a H1 heading.",
     variant: "h1",
     size: "3xl",
     weight: "regular",
     font: "default",
     color: "default",
     transform: "capitalize",
+    lineheight: "normal",
+    letterspacing: "normal",
     alignment: "left",
   },
   render: (args) => <Heading {...args} />,
 };
 export const h2: Story = {
   args: {
-    children: "This is an H2 heading",
+    children: "This is a H2 heading",
     variant: "h2",
     size: "2xl",
     weight: "regular",
     font: "default",
     color: "default",
     transform: "capitalize",
+    lineheight: "normal",
+    letterspacing: "normal",
     alignment: "left",
   },
   render: (args) => <Heading {...args} />,
 };
 export const h3: Story = {
   args: {
-    children: "This is an H3 heading",
+    children: "This is a H3 heading",
     variant: "h3",
     size: "xl",
     weight: "regular",
     font: "default",
     color: "default",
     transform: "capitalize",
+    lineheight: "normal",
+    letterspacing: "normal",
     alignment: "left",
   },
   render: (args) => <Heading {...args} />,
 };
 export const h4: Story = {
   args: {
-    children: "This is an H4 heading",
+    children: "This is a H4 heading",
     variant: "h4",
     size: "lg",
     weight: "regular",
     font: "default",
     color: "default",
     transform: "capitalize",
+    lineheight: "normal",
+    letterspacing: "normal",
     alignment: "left",
   },
   render: (args) => <Heading {...args} />,
 };
 export const h5: Story = {
   args: {
-    children: "This is an H5 heading",
+    children: "This is a H5 heading",
     variant: "h5",
     size: "md",
     weight: "regular",
     font: "default",
     color: "default",
     transform: "capitalize",
+    lineheight: "normal",
+    letterspacing: "normal",
     alignment: "left",
   },
   render: (args) => <Heading {...args} />,
 };
 export const h6: Story = {
   args: {
-    children: "This is an H6 heading",
+    children: "This is a H6 heading",
     variant: "h6",
     size: "sm",
     weight: "regular",
     font: "default",
     color: "default",
     transform: "capitalize",
+    lineheight: "normal",
+    letterspacing: "normal",
     alignment: "left",
   },
   render: (args) => <Heading {...args} />,

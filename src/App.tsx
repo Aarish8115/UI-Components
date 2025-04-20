@@ -1,6 +1,18 @@
 function App() {
   return (
     <>
+      <div className="text-2xl leading-tight">Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti corporis maiores vitae mollitia! Ullam fuga ducimus enim distinctio velit. Eos!</div>
+      <div className="text-2xl leading-snug">Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti corporis maiores vitae mollitia! Ullam fuga ducimus enim distinctio velit. Eos!</div>
+      <div className="text-2xl leading-normal">Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti corporis maiores vitae mollitia! Ullam fuga ducimus enim distinctio velit. Eos!</div>
+      <div className="text-2xl leading-relaxed">Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti corporis maiores vitae mollitia! Ullam fuga ducimus enim distinctio velit. Eos!</div>
+      <div className="text-2xl leading-loose">Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti corporis maiores vitae mollitia! Ullam fuga ducimus enim distinctio velit. Eos!</div>
+      <hr />
+      <div className="text-2xl tracking-tighter">Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti corporis maiores vitae mollitia! Ullam fuga ducimus enim distinctio velit. Eos!</div>
+      <div className="text-2xl tracking-tight">Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti corporis maiores vitae mollitia! Ullam fuga ducimus enim distinctio velit. Eos!</div>
+      <div className="text-2xl tracking-normal">Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti corporis maiores vitae mollitia! Ullam fuga ducimus enim distinctio velit. Eos!</div>
+      <div className="text-2xl tracking-wide">Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti corporis maiores vitae mollitia! Ullam fuga ducimus enim distinctio velit. Eos!</div>
+      <div className="text-2xl tracking-wider">Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti corporis maiores vitae mollitia! Ullam fuga ducimus enim distinctio velit. Eos!</div>
+      <div className="text-2xl tracking-widest">Lorem ipsum dolor sit amet. <br /> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti corporis maiores vitae mollitia! Ullam fuga ducimus enim distinctio velit. Eos!</div>
       <div className="text-black svatopluk-light text-4xl wrap ">default</div>
       <div className="text-black svatopluk-regular text-4xl wrap ">default</div>
       <div className="text-black svatopluk-medium text-4xl wrap ">default</div>
@@ -27,6 +39,7 @@ function App() {
       <div className="text-center">center</div>
       <div className="text-right">right</div>
       <div className="text-justify">justify</div>
+      
     </>
   );
 }
