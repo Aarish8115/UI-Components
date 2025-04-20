@@ -1,1 +1,83 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Svatopluk-Light";
+  src: local("Svatopluk-Light"),
+    url("./fonts/Svatopluk-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "Svatopluk-Regular";
+  src: local("Svatopluk-Regular"),
+    url("./fonts/Svatopluk-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Svatopluk-Medium";
+  src: local("Svatopluk-Medium"),
+    url("./fonts/Svatopluk-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Svatopluk-SemiBold";
+  src: local("Svatopluk-SemiBold"),
+    url("./fonts/Svatopluk-SemiBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Svatopluk-Bold";
+  src: local("Svatopluk-Bold"),
+    url("./fonts/Svatopluk-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Svatopluk-LightItalic";
+  src: local("Svatopluk-LightItalic"),
+    url("./fonts/Svatopluk-LightItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Svatopluk-RegularItalic";
+  src: local("Svatopluk-RegularItalic"),
+    url("./fonts/Svatopluk-RegularItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Svatopluk-MediumItalic";
+  src: local("Svatopluk-MediumItalic"),
+    url("./fonts/Svatopluk-MediumItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Svatopluk-SemiBoldItalic";
+  src: local("Svatopluk-SemiBoldItalic"),
+    url("./fonts/Svatopluk-SemiBoldItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Svatopluk-BoldItalic";
+  src: local("Svatopluk-BoldItalic"),
+    url("./fonts/Svatopluk-BoldItalic.otf") format("opentype");
+}
+
+.svatopluk-light {
+  font-family: "Svatopluk-Light";
+}
+.svatopluk-regular {
+  font-family: "Svatopluk-Regular";
+}
+.svatopluk-medium {
+  font-family: "Svatopluk-Medium";
+}
+.svatopluk-semibold {
+  font-family: "Svatopluk-SemiBold";
+}
+.svatopluk-bold {
+  font-family: "Svatopluk-Bold";
+}
+.svatopluk-lightitalic {
+  font-family: "Svatopluk-LightItalic";
+}
+.svatopluk-regularitalic {
+  font-family: "Svatopluk-RegularItalic";
+}
+.svatopluk-mediumitalic {
+  font-family: "Svatopluk-MediumItalic";
+}
+.svatopluk-semibolditalic {
+  font-family: "Svatopluk-SemiBoldItalic";
+}
+.svatopluk-bolditalic {
+  font-family: "Svatopluk-BoldItalic";
+}

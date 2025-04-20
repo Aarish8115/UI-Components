@@ -32,6 +32,15 @@ const meta: Meta<StoryProps> = {
         type: { summary: "light | regular | medium | semibold | bold" },
       },
     },
+    font: {
+      options: ["default", "italic"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "default | italic" },
+      },
+    },
     color: {
       options: ["default", "primary", "secondary", "muted", "accent"],
       control: {
@@ -68,6 +77,7 @@ export const h1: Story = {
     variant: "h1",
     size: "3xl",
     weight: "regular",
+    font: "default",
     color: "default",
     transform: "capitalize",
     alignment: "left",
@@ -80,6 +90,7 @@ export const h2: Story = {
     variant: "h2",
     size: "2xl",
     weight: "regular",
+    font: "default",
     color: "default",
     transform: "capitalize",
     alignment: "left",
@@ -92,6 +103,7 @@ export const h3: Story = {
     variant: "h3",
     size: "xl",
     weight: "regular",
+    font: "default",
     color: "default",
     transform: "capitalize",
     alignment: "left",
@@ -104,6 +116,7 @@ export const h4: Story = {
     variant: "h4",
     size: "lg",
     weight: "regular",
+    font: "default",
     color: "default",
     transform: "capitalize",
     alignment: "left",
@@ -116,6 +129,7 @@ export const h5: Story = {
     variant: "h5",
     size: "md",
     weight: "regular",
+    font: "default",
     color: "default",
     transform: "capitalize",
     alignment: "left",
@@ -128,6 +142,7 @@ export const h6: Story = {
     variant: "h6",
     size: "sm",
     weight: "regular",
+    font: "default",
     color: "default",
     transform: "capitalize",
     alignment: "left",

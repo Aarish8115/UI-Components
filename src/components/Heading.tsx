@@ -6,6 +6,7 @@ type HeadingProps = PropsWithChildren<{
   variant: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   size: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
   weight: "light" | "regular" | "medium" | "semibold" | "bold";
+  font: "default" | "italic";
   color: "default" | "muted" | "primary" | "secondary" | "accent";
   transform: "capitalize" | "uppercase" | "lowercase";
   alignment: "left" | "center" | "right" | "justify";
@@ -17,6 +18,7 @@ export const Heading = ({
   size = "md",
   weight = "regular",
   color = "default",
+  font = "default",
   transform = "capitalize",
   alignment = "left",
 }: HeadingProps) => {
@@ -29,11 +31,15 @@ export const Heading = ({
     "3xl": "text-4xl",
   };
   const weightStyles: Record<HeadingProps["weight"], string> = {
-    light: "font-light",
-    regular: "font-normal",
-    medium: "font-medium",
-    semibold: "font-semibold",
-    bold: "font-bold",
+    light: "svatopluk-light",
+    regular: "svatopluk-regular",
+    medium: "svatopluk-medium",
+    semibold: "svatopluk-semibold",
+    bold: "svatopluk-bold",
+  };
+  const fontStyles: Record<HeadingProps["font"], string> = {
+    default: "",
+    italic: "italic",
   };
   const colorStyles: Record<HeadingProps["color"], string> = {
     default: "text-black",
@@ -56,7 +62,7 @@ export const Heading = ({
 
   const className = clsx(
     sizeStyles[size],
-    weightStyles[weight],
+    weightStyles[weight] + fontStyles[font],
     colorStyles[color],
     transformStyles[transform],
     alignmentStyle[alignment]
