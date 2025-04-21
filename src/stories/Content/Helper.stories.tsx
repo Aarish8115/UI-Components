@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
-import { Paragraph } from "../components/Paragraph";
+import { HelperText } from "../../components/Helper";
 
-type StoryProps = ComponentProps<typeof Paragraph> & {
+type StoryProps = ComponentProps<typeof HelperText> & {
   HeadingText: string;
 };
 
 const meta: Meta<StoryProps> = {
-  component: Paragraph,
+  component: HelperText,
   tags: ["autodocs"],
   argTypes: {
     size: {
@@ -29,7 +29,7 @@ const meta: Meta<StoryProps> = {
     font: {
       options: ["default", "italic"],
       control: {
-        type: "select",
+        type: "radio",
       },
       table: {
         type: { summary: "default | italic" },
@@ -65,15 +65,15 @@ export default meta;
 
 type Story = StoryObj<StoryProps>;
 
-export const paragraph: Story = {
+export const Helper: Story = {
   args: {
-    children: "This is a paragraph",
-    size: "md",
-    weight: "regular",
+    children: "This is a helper text.",
+    size: "sm",
+    weight: "semibold",
     font: "default",
     alignment: "left",
     lineheight: "normal",
     letterspacing: "normal",
   },
-  render: (args) => <Paragraph {...args} />,
+  render: (args) => <HelperText {...args} />,
 };

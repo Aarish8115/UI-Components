@@ -1,15 +1,24 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
-import { Heading } from "../components/Heading";
+import { Head } from "../../components/Heading";
 
-type StoryProps = ComponentProps<typeof Heading> & {
+type StoryProps = ComponentProps<typeof Head> & {
   HeadingText: string;
 };
 
 const meta: Meta<StoryProps> = {
-  component: Heading,
+  component: Head,
   tags: ["autodocs"],
   argTypes: {
+    variant: {
+      options: ["default", "primary", "secondary", "muted", "accent"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "default | primary | secondary | muted | accent" },
+      },
+    },
     size: {
       options: ["sm", "md", "lg", "xl", "2xl", "3xl"],
       control: {
@@ -29,21 +38,13 @@ const meta: Meta<StoryProps> = {
     font: {
       options: ["default", "italic"],
       control: {
-        type: "select",
+        type: "radio",
       },
       table: {
         type: { summary: "default | italic" },
       },
     },
-    color: {
-      options: ["default", "primary", "secondary", "muted", "accent"],
-      control: {
-        type: "select",
-      },
-      table: {
-        type: { summary: "default | primary | secondary | muted | accent" },
-      },
-    },
+
     alignment: {
       options: ["left", "center", "right", "justify"],
       control: {
@@ -80,17 +81,18 @@ const meta: Meta<StoryProps> = {
 export default meta;
 
 type Story = StoryObj<StoryProps>;
-export const h2: Story = {
+
+export const Heading: Story = {
   args: {
-    children: "This is a H2 heading",
-    size: "2xl",
+    children: "This is a  heading.",
+    variant: "default",
+    size: "3xl",
     weight: "regular",
     font: "default",
-    color: "default",
     transform: "capitalize",
     lineheight: "normal",
     letterspacing: "normal",
     alignment: "left",
   },
-  render: (args) => <Heading {...args} />,
+  render: (args) => <Head {...args} />,
 };

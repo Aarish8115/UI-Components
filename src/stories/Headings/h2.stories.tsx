@@ -1,21 +1,21 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
-import { Label } from "../components/Label";
+import { Head } from "../../components/Heading";
 
-type StoryProps = ComponentProps<typeof Label> & {
-  HeadingText: string;
+type StoryProps = ComponentProps<typeof Head> & {
+  HeadText: string;
 };
 
 const meta: Meta<StoryProps> = {
-  component: Label,
+  component: Head,
   tags: ["autodocs"],
   argTypes: {
     size: {
-      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],
+      options: ["sm", "md", "lg", "xl", "2xl", "3xl"],
       control: {
         type: "select",
       },
-      table: { type: { summary: "xs | sm | md | lg | xl | 2xl | 3xl" } },
+      table: { type: { summary: "sm | md | lg | xl | 2xl | 3xl" } },
     },
     weight: {
       options: ["light", "regular", "medium", "semibold", "bold"],
@@ -29,10 +29,19 @@ const meta: Meta<StoryProps> = {
     font: {
       options: ["default", "italic"],
       control: {
-        type: "select",
+        type: "radio",
       },
       table: {
         type: { summary: "default | italic" },
+      },
+    },
+    variant: {
+      options: ["default", "primary", "secondary", "muted", "accent"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "default | primary | secondary | muted | accent" },
       },
     },
     alignment: {
@@ -41,6 +50,13 @@ const meta: Meta<StoryProps> = {
         type: "select",
       },
       table: { type: { summary: "left | center | right | justify" } },
+    },
+    transform: {
+      options: ["capitalize", "uppercase", "lowercase"],
+      control: {
+        type: "select",
+      },
+      table: { type: { summary: "capitalize | uppercase | lowercase" } },
     },
     lineheight: {
       options: ["none", "tight", "snug", "normal", "relaxed", "loose"],
@@ -64,15 +80,17 @@ const meta: Meta<StoryProps> = {
 export default meta;
 
 type Story = StoryObj<StoryProps>;
-export const label: Story = {
+export const h2: Story = {
   args: {
-    children: "This is a label.",
-    size: "lg",
-    weight: "medium",
+    children: "This is a H2 Head",
+    variant: "default",
+    size: "2xl",
+    weight: "regular",
     font: "default",
-    alignment: "left",
+    transform: "capitalize",
     lineheight: "normal",
     letterspacing: "normal",
+    alignment: "left",
   },
-  render: (args) => <Label {...args} />,
+  render: (args) => <Head {...args} />,
 };

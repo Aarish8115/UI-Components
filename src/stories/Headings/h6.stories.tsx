@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
-import { Heading } from "../components/Heading";
+import { Head } from "../../components/Heading";
 
-type StoryProps = ComponentProps<typeof Heading> & {
-  HeadingText: string;
+type StoryProps = ComponentProps<typeof Head> & {
+  HeadText: string;
 };
 
 const meta: Meta<StoryProps> = {
-  component: Heading,
+  component: Head,
   tags: ["autodocs"],
   argTypes: {
     size: {
@@ -29,13 +29,13 @@ const meta: Meta<StoryProps> = {
     font: {
       options: ["default", "italic"],
       control: {
-        type: "select",
+        type: "radio",
       },
       table: {
         type: { summary: "default | italic" },
       },
     },
-    color: {
+    variant: {
       options: ["default", "primary", "secondary", "muted", "accent"],
       control: {
         type: "select",
@@ -84,14 +84,14 @@ type Story = StoryObj<StoryProps>;
 export const h6: Story = {
   args: {
     children: "This is a H6 heading",
+    variant: "default",
     size: "sm",
     weight: "regular",
     font: "default",
-    color: "default",
     transform: "capitalize",
     lineheight: "normal",
     letterspacing: "normal",
     alignment: "left",
   },
-  render: (args) => <Heading {...args} />,
+  render: (args) => <Head {...args} />,
 };

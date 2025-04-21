@@ -1,21 +1,21 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ComponentProps } from "react";
-import { Captions } from "../components/Caption";
+import { Head } from "../../components/Heading";
 
-type StoryProps = ComponentProps<typeof Captions> & {
-  HeadingText: string;
+type StoryProps = ComponentProps<typeof Head> & {
+  HeadText: string;
 };
 
 const meta: Meta<StoryProps> = {
-  component: Captions,
+  component: Head,
   tags: ["autodocs"],
   argTypes: {
     size: {
-      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],
+      options: ["sm", "md", "lg", "xl", "2xl", "3xl"],
       control: {
         type: "select",
       },
-      table: { type: { summary: "xs | sm | md | lg | xl | 2xl | 3xl" } },
+      table: { type: { summary: "sm | md | lg | xl | 2xl | 3xl" } },
     },
     weight: {
       options: ["light", "regular", "medium", "semibold", "bold"],
@@ -29,10 +29,19 @@ const meta: Meta<StoryProps> = {
     font: {
       options: ["default", "italic"],
       control: {
-        type: "select",
+        type: "radio",
       },
       table: {
         type: { summary: "default | italic" },
+      },
+    },
+    variant: {
+      options: ["default", "primary", "secondary", "muted", "accent"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "default | primary | secondary | muted | accent" },
       },
     },
     alignment: {
@@ -41,6 +50,13 @@ const meta: Meta<StoryProps> = {
         type: "select",
       },
       table: { type: { summary: "left | center | right | justify" } },
+    },
+    transform: {
+      options: ["capitalize", "uppercase", "lowercase"],
+      control: {
+        type: "select",
+      },
+      table: { type: { summary: "capitalize | uppercase | lowercase" } },
     },
     lineheight: {
       options: ["none", "tight", "snug", "normal", "relaxed", "loose"],
@@ -64,15 +80,17 @@ const meta: Meta<StoryProps> = {
 export default meta;
 
 type Story = StoryObj<StoryProps>;
-export const Caption: Story = {
+export const h3: Story = {
   args: {
-    children: '"This is a caption."',
-    size: "sm",
-    weight: "light",
-    font: "italic",
-    alignment: "left",
+    children: "This is a H3 heading",
+    variant: "default",
+    size: "xl",
+    weight: "regular",
+    font: "default",
+    transform: "capitalize",
     lineheight: "normal",
     letterspacing: "normal",
+    alignment: "left",
   },
-  render: (args) => <Captions {...args} />,
+  render: (args) => <Head {...args} />,
 };

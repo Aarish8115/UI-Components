@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 import clsx from "clsx";
 
 type HeadingProps = PropsWithChildren<{
+  variant: "default" | "primary" | "secondary" | "muted" | "accent";
   size: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
   weight: "light" | "regular" | "medium" | "semibold" | "bold";
   font: "default" | "italic";
@@ -12,13 +13,13 @@ type HeadingProps = PropsWithChildren<{
   alignment: "left" | "center" | "right" | "justify";
 }>;
 
-export const Heading = ({
+export const Head = ({
   children,
   size = "md",
+  variant = "default",
   weight = "regular",
   lineheight = "normal",
   letterspacing = "normal",
-  color = "default",
   font = "default",
   transform = "capitalize",
   alignment = "left",
@@ -42,7 +43,7 @@ export const Heading = ({
     default: "",
     italic: "italic",
   };
-  const colorStyles: Record<HeadingProps["color"], string> = {
+  const variantStyles: Record<HeadingProps["variant"], string> = {
     default: "text-black",
     muted: "text-gray-500",
     primary: "text-blue-500",
@@ -80,7 +81,7 @@ export const Heading = ({
   const className = clsx(
     sizeStyles[size],
     weightStyles[weight] + fontStyles[font],
-    colorStyles[color],
+    variantStyles[variant],
     transformStyles[transform],
     alignmentStyle[alignment],
     lineHeightStyle[lineheight],
