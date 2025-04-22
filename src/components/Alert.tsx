@@ -1,5 +1,7 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
 import clsx from "clsx";
+import { FaXmark } from "react-icons/fa6";
+
 type AlertProps = PropsWithChildren<{
   variant: "success" | "info" | "warning" | "error";
   size: "sm" | "md" | "lg";
@@ -9,6 +11,10 @@ export const AlertMessage = ({
   variant = "success",
   size = "md",
 }: AlertProps) => {
+  const [isHidden, setisHidden] = useState(false);
+  const closeAlert = () => {
+    setisHidden(true);
+  };
   const variantStyles: Record<AlertProps["variant"], string> = {
     success: "bg-green-600/30 text-green-700 border-green-600",
     info: "bg-blue-600/30 text-blue-700 border-blue-600",
@@ -20,11 +26,28 @@ export const AlertMessage = ({
     md: "text-base rounded-xl px-4 py-3",
     lg: "text-lg rounded-2xl px-5 py-4",
   };
-  const classNames = clsx(
+
+  const baseClasses = clsx(
     sizeStyle[size],
     variantStyles[variant],
-    "border-2  m-2 svatopluk-medium"
+    "border-2 m-2 svatopluk-medium  gap-1 items-center"
   );
 
-  return <span className={classNames}>This is a {variant} alert.</span>;
+  return !isHidden ? (
+    <span className={clsx(baseClasses, isHidden ? "hidden" : "inline-flex")}>
+      This is a {variant} alert.
+      <button onClick={closeAlert}>
+        <FaXmark className="inline-block text-lg cursor-pointer " />
+      </button>
+    </span>
+  ) : (
+    <button
+      onClick={() => {
+        setisHidden(false);
+      }}
+      className="cursor-pointer rounded-4xl bg-blue-400 text-white px-4 py-2"
+    >
+      Show Alert
+    </button>
+  );
 };

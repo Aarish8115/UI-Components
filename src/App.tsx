@@ -1,11 +1,12 @@
+import { FaXmark } from "react-icons/fa6";
+
 function App() {
   return (
     <>
-      <input
-        className="bg-gray-600/40 hover:cursor-not-allowed"
-        placeholder=" type here "
-        disabled={true}
-      />
+      <span className="bg-green-600/30 border-2 px-4 py-3 hidden  gap-1 items-center svatopluk-medium text-green-700 border-green-600 text-base rounded-xl ">
+        This is success alert.
+          <FaXmark className="inline-block text-xl" />
+      </span>
       <input
         className="bg-gray-600/40 "
         placeholder=" type here "

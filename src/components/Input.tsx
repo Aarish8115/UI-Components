@@ -9,7 +9,7 @@ export const Input = ({ variant = "default", size = "md" }: InputProps) => {
   const variantStyles: Record<InputProps["variant"], string> = {
     default: "",
     focus: "border-gray-600 border-[1.5px]",
-    error: " border-red-500 border-[1.5px]",
+    error: " border-red-500 border-[1.5px] focus:border-red-500",
     disabled: "cursor-not-allowed bg-gray-100",
   };
   const sizeStyle: Record<InputProps["size"], string> = {
@@ -24,10 +24,19 @@ export const Input = ({ variant = "default", size = "md" }: InputProps) => {
   );
 
   return (
-    <input
-      className={classNames}
-      placeholder="Text here"
-      disabled={variant === "disabled" ? true : false}
-    />
+    <>
+      <input
+        className={classNames}
+        placeholder="Text here"
+        disabled={variant === "disabled" ? true : false}
+      />
+      {variant === "error" ? (
+        <p className="svatopluk-regular text-xs text-red-400 mx-3">
+          Invalid text
+        </p>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
