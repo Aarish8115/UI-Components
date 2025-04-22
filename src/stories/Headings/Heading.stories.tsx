@@ -9,6 +9,14 @@ type StoryProps = ComponentProps<typeof Head> & {
 const meta: Meta<StoryProps> = {
   component: Head,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "A text label for form controls. Supports weight and size customization. Inherits all native label props.",
+      },
+    },
+  },
   argTypes: {
     variant: {
       options: ["default", "primary", "secondary", "muted", "accent"],

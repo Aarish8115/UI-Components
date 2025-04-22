@@ -1,78 +1,53 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ComponentProps } from "react";
-import { Label } from "../../components/Label";
 
-type StoryProps = ComponentProps<typeof Label> & {
-  HeadingText: string;
-};
+import { ComponentProps } from "react";
+import { LabelComponent } from "../../components/Label";
+
+type StoryProps = ComponentProps<typeof LabelComponent>;
 
 const meta: Meta<StoryProps> = {
-  component: Label,
+  component: LabelComponent,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "A text label for form controls. Supports weight and size customization. Inherits all native label props.",
+      },
+    },
+  },
   argTypes: {
-    size: {
-      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],
-      control: {
-        type: "select",
-      },
-      table: { type: { summary: "xs | sm | md | lg | xl | 2xl | 3xl" } },
-    },
     weight: {
-      options: ["light", "regular", "medium", "semibold", "bold"],
+      options: ["light", "regular", "medium", "bold"],
       control: {
         type: "select",
       },
-      table: {
-        type: { summary: "light | regular | medium | semibold | bold" },
-      },
+      description: "Font weight of the label text.",
+      table: { type: { summary: "default | error | focus | disabled" } },
     },
-    font: {
-      options: ["default", "italic"],
+    size: {
+      options: ["sm", "md", "lg"],
       control: {
         type: "radio",
       },
+      description: "Font size of the label text.",
       table: {
-        type: { summary: "default | italic" },
+        type: { summary: "sm | md | lg" },
       },
     },
-    alignment: {
-      options: ["left", "center", "right", "justify"],
-      control: {
-        type: "select",
-      },
-      table: { type: { summary: "left | center | right | justify" } },
-    },
-    lineheight: {
-      options: ["none", "tight", "snug", "normal", "relaxed", "loose"],
-      control: {
-        type: "select",
-      },
-      table: { type: { summary: "tight | snug | normal | relaxed | loose" } },
-    },
-    letterspacing: {
-      options: ["tighter", "tight", "normal", "wide", "wider", "widest"],
-      control: {
-        type: "select",
-      },
-      table: {
-        type: { summary: "tighter | tight | normal | wide | wider | widest" },
-      },
-    },
+    htmlFor: { control: "text" },
   },
 };
 
 export default meta;
 
 type Story = StoryObj<StoryProps>;
-export const label: Story = {
+
+export const Label: Story = {
   args: {
-    children: "This is a label.",
-    size: "lg",
+    children: "This is a Label.",
     weight: "medium",
-    font: "default",
-    alignment: "left",
-    lineheight: "normal",
-    letterspacing: "normal",
+    size: "md",
+    htmlFor: "input-id",
   },
-  render: (args) => <Label {...args} />,
 };

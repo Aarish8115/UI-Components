@@ -3,10 +3,12 @@ import clsx from "clsx";
 import { FaXmark } from "react-icons/fa6";
 
 type AlertProps = PropsWithChildren<{
+  /** This is a variant */
   variant: "success" | "info" | "warning" | "error";
+  /** This is a size variant */
   size: "sm" | "md" | "lg";
 }>;
-
+/** This is a doc */
 export const AlertMessage = ({
   variant = "success",
   size = "md",

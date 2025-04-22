@@ -9,6 +9,14 @@ type StoryProps = ComponentProps<typeof HelperText> & {
 const meta: Meta<StoryProps> = {
   component: HelperText,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Provides additional helper text for inputs or labels. Useful for clarifying input expectations.",
+      },
+    },
+  },
   argTypes: {
     size: {
       options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],

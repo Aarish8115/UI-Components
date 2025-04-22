@@ -9,6 +9,14 @@ type StoryProps = ComponentProps<typeof Paragraph> & {
 const meta: Meta<StoryProps> = {
   component: Paragraph,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "A paragraph text element for general body content. Supports size and weight customization for flexibility across layouts.",
+      },
+    },
+  },
   argTypes: {
     size: {
       options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],

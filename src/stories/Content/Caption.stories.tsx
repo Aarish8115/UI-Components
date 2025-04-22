@@ -9,6 +9,14 @@ type StoryProps = ComponentProps<typeof Captions> & {
 const meta: Meta<StoryProps> = {
   component: Captions,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "A small caption element, often used for status messages or field hints below inputs.",
+      },
+    },
+  },
   argTypes: {
     size: {
       options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],

@@ -8,14 +8,25 @@ type StoryProps = ComponentProps<typeof AlertMessage>;
 const meta: Meta<StoryProps> = {
   component: AlertMessage,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Displays alert messages with variant and size customization. Dismissable and styled using Tailwind.",
+      },
+    },
+  },
   argTypes: {
     variant: {
       options: ["success", "error", "warning", "info"],
       control: {
         type: "select",
       },
-      table: { type: { summary: "success|error|warning|info" } },
+      table: {
+        type: { summary: "success|error|warning|info" },
+      },
     },
+
     size: {
       options: ["sm", "md", "lg"],
       control: {

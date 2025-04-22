@@ -1,11 +1,16 @@
-import { PropsWithChildren } from "react";
+import { InputHTMLAttributes, FC } from "react";
 import clsx from "clsx";
-type InputProps = PropsWithChildren<{
+interface InputProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
   variant: "default" | "focus" | "error" | "disabled";
   size: "sm" | "md" | "lg";
-}>;
+}
 
-export const Input = ({ variant = "default", size = "md" }: InputProps) => {
+export const Input: FC<InputProps> = ({
+  variant = "default",
+  size = "md",
+  ...props
+}: InputProps) => {
   const variantStyles: Record<InputProps["variant"], string> = {
     default: "",
     focus: "border-gray-600 border-[1.5px]",
@@ -29,6 +34,7 @@ export const Input = ({ variant = "default", size = "md" }: InputProps) => {
         className={classNames}
         placeholder="Text here"
         disabled={variant === "disabled" ? true : false}
+        {...props}
       />
       {variant === "error" ? (
         <p className="svatopluk-regular text-xs text-red-400 mx-3">
