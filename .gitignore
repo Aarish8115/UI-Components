@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 
 *storybook.log
+
+# Test files and temporary files
+test-*.js
+*-test.js
+/tmp/
+*.test.temp
